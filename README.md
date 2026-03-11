@@ -3,8 +3,8 @@
 - This repository contains SQL queries and exercises that I am practicing while learning data analysis.
 
 ## Databases Used
-- customers sample Database
-- orders sample Database
+- mydatabase sample Database
+- salesdb sample Database
 
 ## Topics Covered
 - SELECT statements
@@ -16,10 +16,14 @@
 
 ## Example Query
 
-SELECT customer_id, COUNT(*) AS total_rentals
-FROM rental
-GROUP BY customer_id
-ORDER BY total_rentals DESC;
+SELECT 
+	country , 
+	SUM(score) AS total_score,
+    COUNT(id) AS total_customers
+FROM customers
+WHERE score > 400
+GROUP BY country
+HAVING total_score > 800 ;
 
 ## Goal
 
